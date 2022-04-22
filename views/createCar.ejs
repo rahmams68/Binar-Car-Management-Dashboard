@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <title>Binar Car Management Dashboard</title>
+</head>
+
+<body>
+    <nav>
+        <div class="sidebar">
+            <div class="menus">
+                <div class="logo"></div>
+
+                <div class="menu">
+                    <img src="./images/fi_home.png" alt="">
+                    <p>Dashboard</p>
+                </div>
+
+                <div class="menu selected">
+                    <img src="./images/fi_truck.png" alt="">
+                    <p>Cars</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <div class="upbar">
+                <div class="upbar-left">
+                    <div class="logo"></div>
+                    <img src="./images/fi_menu.png" alt="">
+                </div>
+
+                <div class="upbar-right">
+                    <div class="search-box">
+                        <input class="search" type="text" id="cari" name="cari" placeholder="Search">
+                        <a href="">Search</a>
+                    </div>
+
+                    <div class="account">
+                        <h4>R</h4>
+                        <p>Rahma Maulida</p>
+                        <img src="./images/fi_chevron-down.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="leftbar">
+                <div class="menus">
+                    <a href="">CARS</a>
+                    <a href="" class="current-page">List Car</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="nav-list">
+            <a href="">Cars</a>
+            <p>&gt;</p>
+            <a href="/">List Car</a>
+            <p>&gt;</p>
+            <a href="">Add New Car</a>
+        </div>
+
+        <div class="title">
+            <h1>Add New Car</h1>
+        </div>
+
+        <form method="POST" action="/car/create">
+            <div class="row">
+                <p>Nama<span>*</span></p>
+                <input type="text" id="nama" name="nama" placeholder="Avanza" required>
+            </div>
+
+            <div class="row">
+                <p>Sewa Per Hari<span>*</span></p>
+                <input type="number" id="harga" name="harga" value="" required>
+            </div>
+
+            <div class="row">
+                <p>Ukuran<span>*</span></p>
+                <select name="ukuran" id="ukuran" required>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <p>Foto<span>*</span></p>
+                <input class="upload" type="text" id="foto" name="foto" placeholder="https://placeimg.com/640/480/any" value="./images/sample.png" required>
+            </div>
+
+            <h5>File size max. 2MB</h5>
+            
+            <div class="btn-form">
+                <a href="/" class="btn-cancel">Cancel</a>
+                <input type="submit" id="btn-create" name="btn-create" class="btn-save" value="Save">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

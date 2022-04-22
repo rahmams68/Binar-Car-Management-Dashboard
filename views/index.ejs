@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <title>Binar Car Management Dashboard</title>
+</head>
+
+<body>
+    <nav>
+        <div class="sidebar">
+            <div class="menus">
+                <div class="logo"></div>
+
+                <div class="menu">
+                    <img src="./images/fi_home.png" alt="">
+                    <p>Dashboard</p>
+                </div>
+
+                <div class="menu selected">
+                    <img src="./images/fi_truck.png" alt="">
+                    <p>Cars</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <div class="upbar">
+                <div class="upbar-left">
+                    <div class="logo"></div>
+                    <img src="./images/fi_menu.png" alt="">
+                </div>
+
+                <div class="upbar-right">
+                    <div class="search-box">
+                        <input class="search" type="text" id="cari" name="cari" placeholder="Search">
+                        <a href="">Search</a>
+                    </div>
+
+                    <div class="account">
+                        <h4>R</h4>
+                        <p>Rahma Maulida</p>
+                        <img src="./images/fi_chevron-down.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="leftbar">
+                <div class="menus">
+                    <a href="">CARS</a>
+                    <a href="" class="current-page">List Car</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="nav-list">
+            <a href="" class="">Cars</a>
+            <p>&gt;</p>
+            <a href="">List Car</a>
+        </div>
+
+        <div class="title">
+            <h1>List Car</h1>
+            <a href="/create">+ Add New Car</a>
+        </div>
+
+        <div class="filters">
+            <a href="/" class="btn-filter">All</a>
+            <a href="/smallCar" class="btn-filter">Small</a>
+            <a href="/mediumCar" class="btn-filter">Medium</a>
+            <a href="/largeCar" class="btn-filter">Large</a>
+        </div>
+
+        <div class="display-cars">
+            <% car.forEach(e => { %>
+                <div class="car">
+                    <img src="./images/sample.png" alt="./images/sample.png">
+    
+                    <div class="desc">
+                        <p><%= e.name %></p>
+                        <h3>Rp <%= e.price %> / hari</h3>
+                        <div>
+                            <img src="./images/fi_clock.png" alt="">
+                            <p>Updated at 22 Apr 2022, 09.00 <% e.updatedAt %></p>
+                        </div>
+                    </div>
+    
+                    <div class="btn-car">
+                        <a href="/car/delete/<%= e.id %>" class="btn-delete">Delete</a>
+                        <a href="/edit/<%= e.id %>" class="btn-edit">Edit</a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>
